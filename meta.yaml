@@ -1,6 +1,6 @@
 apiVersion: v2
 publisher: cdr
-name: ws-skeleton/eclipseide/4.9.0
+name: eclipse
 version: latest
 type: Che Editor
 displayName: Eclipse IDE
