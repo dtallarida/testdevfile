@@ -1,29 +1,29 @@
 apiVersion: v2
 publisher: cdr
-name: eclipse-temurin
+name: ws-skeleton/eclipseide/4.9.0
 version: latest
 type: Che Editor
-displayName: eclipse-temurin
-title: test
-description: test ide
+displayName: Eclipse IDE
+title: Eclipse IDE (in browser using Broadway) as editor for Eclipse Che
+description: Eclipse running on the Web with Broadway
 category: Editor
-repository: 'https://github.com/adoptium/temurin-build'
+repository: 'https://github.com/ws-skeleton/che-editor-eclipseide/'
 spec:  
   endpoints:
-    - name: eclipse-temurin
-      targetPort: 8080      
+    - name: eclipse-ide
+      targetPort: 5000      
       attributes:
         type: ide
         protocol: http
       public: true
   containers:
-    - image: "quay.io/devfile/universal-developer-image:ubi8-0e189d9"
+    - image: "wsskeleton/eclipse-broadway:latest"
       mountSources: true
-      memoryLimit: 1024M
+      memoryLimit: 2048M
       volumes:
         - name: user-data
           mountPath: /home/coder/.local/share/code-server
       name: code-server
       ports:
-        - exposedPort: 8080
+        - exposedPort: 5000
   initContainers: []
