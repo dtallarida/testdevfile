@@ -1,0 +1,29 @@
+apiVersion: v2
+publisher: cdr
+name: eclipse-temurin
+version: latest
+type: Che Editor
+displayName: eclipse-temurin
+title: test
+description: test ide
+category: Editor
+repository: 'https://github.com/adoptium/temurin-build'
+spec:  
+  endpoints:
+    - name: eclipse-temurin
+      targetPort: 8080      
+      attributes:
+        type: ide
+        protocol: http
+      public: true
+  containers:
+    - image: 'eclipse-temurin'
+      mountSources: true
+      memoryLimit: 1024M
+      volumes:
+        - name: user-data
+          mountPath: /home/coder/.local/share/code-server
+      name: code-server
+      ports:
+        - exposedPort: 8080
+  initContainers: []
