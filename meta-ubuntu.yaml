@@ -33,8 +33,6 @@ spec:
       ports:
         - containerPort: 8080
           protocol: TCP
-          exposed: true
         - containerPort: 5901
           protocol: TCP
-          exposed: true
   initContainers: []
