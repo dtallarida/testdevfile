@@ -31,8 +31,8 @@ spec:
           mountPath: /home/
       name: ubuntu
       ports:
-        - exposedport: 8080
+        - exposedPort: 8080
           protocol: TCP
-        - exposedport: 5901
+        - exposedPort: 5901
           protocol: TCP
   initContainers: []
