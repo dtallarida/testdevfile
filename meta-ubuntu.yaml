@@ -16,6 +16,7 @@ spec:
         protocol: http
       public: true
     - name: websocket-ide
+      path: /websockify
       targetPort: 5901     
       attributes:
         type: ide
@@ -30,5 +31,5 @@ spec:
           mountPath: /home/
       name: ubuntu
       ports:
-        - exposedPort: 5901
+        - exposedPort: [8080, 5901]  
   initContainers: []
