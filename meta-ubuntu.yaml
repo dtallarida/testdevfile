@@ -15,6 +15,12 @@ spec:
         type: ide
         protocol: http
       public: true
+    - name: websocket-ide
+      targetPort: 5901     
+      attributes:
+        type: ide
+        protocol: http
+      public: true
   containers:
     - image: 'u1ih/ubuntu-novnc:latest'
       mountSources: true
