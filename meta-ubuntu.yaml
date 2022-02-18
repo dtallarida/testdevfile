@@ -1,0 +1,28 @@
+apiVersion: v2
+publisher: cdr
+name: ubuntu
+version: latest
+type: Che Editor
+displayName: Ubuntu IDE
+title: UBUNTU
+category: Editor
+repository: ''
+spec:  
+  endpoints:
+    - name: ubuntu-ide
+      targetPort: 8080     
+      attributes:
+        type: ide
+        protocol: http
+      public: true
+  containers:
+    - image: 'u1ih/ubuntu-novnc:latest'
+      mountSources: true
+      memoryLimit: 2048M
+      volumes:
+        - name: home
+          mountPath: /home/
+      name: ubuntu
+      ports:
+        - exposedPort: 8080
+  initContainers: []
