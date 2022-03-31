@@ -1,15 +1,13 @@
 apiVersion: v2
 publisher: eclipse
-name: ideaIC-NOVNC
+name: debian-NOVNC
 version: 2020.2.2
 type: Che Editor
-displayName:  IntelliJ IDEA Community Edition
-title:  IntelliJ IDEA Community Edition (in browser using noVNC) as editor for Eclipse Che
-description:  IntelliJ IDEA Community Edition running on the Web with noVNC
-icon: https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/intellij-idea_logo_300x300.png
+displayName:  Debian NoVNC - Example
+title:  Debian in browser using noVNC as editor 
+description:  Debian running on the Web with noVNC
 category: Editor
-repository: https://github.com/che-incubator/jetbrains-editor-images
-firstPublicationDate: "2020-09-25"
+firstPublicationDate: "2022-03-31"
 spec:
   endpoints:
    -  name: "debian"
@@ -23,10 +21,6 @@ spec:
   containers:
    - name: debian-novnc
      image: "theasp/novnc"
-     mountSources: true
-     volumes:
-         - mountPath: "/debian/home"
-           name: debian-configuration
      ports:
          - exposedPort: 8080
      memoryLimit: "2048M"
