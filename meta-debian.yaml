@@ -20,7 +20,7 @@ spec:
         path: /vnc.html?resize=remote&autoconnect=true&reconnect=true
   containers:
    - name: debian-novnc
-     image: "theasp/novnc"
+     image: "bluered2000/test_novnc_debian2:v1"
      ports:
          - exposedPort: 8080
      memoryLimit: "2048M"
