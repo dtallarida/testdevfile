@@ -12,7 +12,7 @@ spec:
   endpoints:
    -  name: "openkbs"
       public: true
-      targetPort: 8080
+      targetPort: 6901
       attributes:
         protocol: http
         type: ide
@@ -22,5 +22,5 @@ spec:
    - name: openkbs-novnc
      image: "openkbs/eclipse-photon-vnc-docker"
      ports:
-         - exposedPort: 8080
+         - exposedPort: 6901
      memoryLimit: "2048M"
