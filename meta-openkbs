@@ -1,0 +1,26 @@
+apiVersion: v2
+publisher: eclipse
+name: openkbs-NOVNC
+version: 2020.2.2
+type: Che Editor
+displayName:  openkbs NoVNC - Example
+title:  openkbs in browser using noVNC as editor 
+description:  openkbs running on the Web with noVNC
+category: Editor
+firstPublicationDate: "2022-04-02"
+spec:
+  endpoints:
+   -  name: "openkbs"
+      public: true
+      targetPort: 8080
+      attributes:
+        protocol: http
+        type: ide
+        discoverable: false
+        path: /vnc.html?resize=remote&autoconnect=true&reconnect=true
+  containers:
+   - name: openkbs-novnc
+     image: "openkbs/eclipse-photon-vnc-docker"
+     ports:
+         - exposedPort: 8080
+     memoryLimit: "2048M"
